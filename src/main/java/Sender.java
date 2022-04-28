@@ -29,7 +29,7 @@ public class Sender implements Runnable {
                     .uri(new URI(url))
                     .body(BodyInserters.fromObject(vitalSigns))
                     .retrieve()
-                    .bodyToMono(String.class)
+                    .bodyToMono(VitalSignsDTO.class)
                     .block();
             System.out.println("Am trimis cu succes " + deviceIMEI);
 
