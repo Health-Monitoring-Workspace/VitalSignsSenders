@@ -5,16 +5,17 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         int loops = 10000;
-        List<String> imeis = Arrays.asList("XL3189203", "I893erLm", "U892746");
+        List<String> imeis = Arrays.asList("XL3189203", "I893erLm");
+        //"U892746"
 
         while (loops > 0) {
             Thread[] threads = new Thread[3];
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < imeis.size(); i++) {
                 threads[i] = new Thread(new Sender(imeis.get(i)));
                 threads[i].start();
             }
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < imeis.size(); i++) {
                 threads[i].join();
             }
 
