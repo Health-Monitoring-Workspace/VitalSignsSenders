@@ -5,11 +5,11 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         int loops = 10000;
-        List<String> imeis = Arrays.asList("XL3189203", "I893erLm");
+        List<String> imeis = Arrays.asList("XL3189203", "I893erLm", "O8HJU8GH23", "I87Yh7GTR", "JUIOA7AGS", "X896gHj");
         //"U892746"
 
         while (loops > 0) {
-            Thread[] threads = new Thread[3];
+            Thread[] threads = new Thread[imeis.size()];
             for (int i = 0; i < imeis.size(); i++) {
                 threads[i] = new Thread(new Sender(imeis.get(i)));
                 threads[i].start();
